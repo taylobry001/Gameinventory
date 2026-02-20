@@ -3,17 +3,7 @@
 # Python Dictionaries
 # ============================================
 #
-# You are building a video game inventory management system!
-# The player can view, add, use, and manage items across
-# multiple categories. The system tracks item names,
-# quantities, and stats using dictionaries.
-#
-# Files in this project:
-#   main.py             ← You are here (entry point + menu loop)
-#   inventory.py        ← Core inventory management functions
-#   shop.py             ← The item shop (buying/selling)
-#   player.py           ← Player stats and equipment
-#   display.py          ← Display/formatting helper functions
+# main.py ← Entry point + menu loop
 # ============================================
 
 from display import show_banner, show_menu, show_divider
@@ -41,26 +31,36 @@ def main():
 
         if choice == "1":
             show_inventory(inventory)
+
         elif choice == "2":
             show_player_stats(player)
+
         elif choice == "3":
             show_shop(shop)
+
         elif choice == "4":
             buy_item(inventory, shop, player)
+
         elif choice == "5":
             sell_item(inventory, shop, player)
+
         elif choice == "6":
             add_item(inventory)
+
         elif choice == "7":
             use_item(inventory, player)
+
         elif choice == "8":
             equip_item(inventory, player)
+
         elif choice == "9":
             total = count_total_items(inventory)
             print(f"\n📊 You have {total} total items across all categories.")
+
         elif choice == "0":
             print("\n👋 Thanks for playing! See you next time!")
             playing = False
+
         else:
             print("\n❌ Invalid choice. Try again.")
 
@@ -68,4 +68,5 @@ def main():
             show_divider()
 
 
-main()
+if __name__ == "__main__":
+    main()
